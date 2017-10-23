@@ -8,6 +8,7 @@ Use your knowledge of AWS Lambda, Amazon S3, Serverless, Amazon API Gateway, and
 ## Flow of Data
 ![](https://i.imgur.com/U5im4z0.jpg)
 
+
 ## Prerequisites
   - Basic knowledge of HTTP requests using jQuery.
   - Basic understanding of API's.
@@ -19,18 +20,24 @@ Use your knowledge of AWS Lambda, Amazon S3, Serverless, Amazon API Gateway, and
   - Basic understanding of AWS CLI
    
 ## Setup
- - Create HTML, CSS, JS file
- - Import jQuery library
- - Do a sanity check in browser
- - Check if you have AWS CLI and Sereverless
- - Configure your AWS CLI with your given credentials
- - Create aws-nodejs template/boilerplate
+ - Fork & clone repo.
+ - Npm install ```aws-sdk``` & require in packages.
+ - Create HTML, CSS, JS file.
+ - Import jQuery library.
+ - Do a sanity check in browser.
+ - Check if you have AWS CLI and Serverless installed.
+ - Configure your AWS CLI with your given credentials.
+ - Create aws-nodejs template/boilerplate.
 
 ## Tasks
-You will be creating a Lambda function that makes a request to a public S3 bucket that is full of random images. From there, you will be creating a client side script to render images when your Lambda function is called. 
+You will be creating a Lambda function that makes a request to a public S3 bucket that is full of random images. From there, you will be creating a client side scripts to render the images when your Lambda function is executed. 
 
 ## Steps
-1. Build AWS Lambda function that makes a request to the public API bucket `photo-bucket-tmp-prjct`
+1. Build AWS Lambda function that makes a request to the public API bucket `photo-bucket-tmp-prjct`.
+Add in the following to your Lambda function:
+ - ```const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+const params = { Bucket: 'photo-bucket-tmp-prjct' };```
 2. Configure .yml file with cors:
 ```events:
       - http:
