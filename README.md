@@ -71,6 +71,7 @@ const params = { Bucket: 'photo-bucket-tmp-prjct'};
   - Note: If you make a change to your function or .yml file you will need to re-deploy
  5. Build a client-side GET request to your specific Lambda URL.
  6. Create a button. When user clicks the button, it should initiate an ajax request to your specific Lambda URL, then dynamically display all the images from the public S3 bucket. 
+ 7. Use the commands referenced below to make enable static website hosting. Then run appropriate command to sync your client-side files to your bucket(ie. html, css , js files). Your public url will be in the format of ```http://bucket-name.s3-website-region.amazonaws.com/```. Test url in browser
 
 ### Testing
   - Use live-server to test client-side scripts.
@@ -95,6 +96,18 @@ const params = { Bucket: 'photo-bucket-tmp-prjct'};
 ***Serverless CLI help***
 
 ```sls help```
+
+***Make Bucket A Static Website***
+
+```aws s3 website s3://website-bucket-name/ --index-document index.html --error-document error.html```
+
+***Sync client-side files to Static Website Bucket***
+
+```aws s3 sync projectfolder s3://website-bucket-name --acl public-read```
+
+***List all s3 Buckets***
+
+aws s3api list-buckets
 
 ### Resources
 
