@@ -77,35 +77,34 @@ const params = { Bucket: 'photo-bucket-tmp-prjct'};
   - Use live-server to test client-side scripts.
 
 ### Useful Commands
-  ***Test function locally***
+ -  ***Test function locally***
 
   ```sls invoke local -f "function name"```
-
-  ***Deploy function only***
+ -  ***Deploy function only***
 
   ```sls deploy -f "function name```
 
-  ***Deploy everything***
+ - ***Deploy everything***
 
   ```sls deploy```
 
-  ***Function logs***
+ - ***Function logs***
 
   ```sls logs -f "function name"```
 
-  ***Serverless CLI help***
+ - ***Serverless CLI help***
 
   ```sls help```
 
-  ***Make Bucket A Static Website***
+ - ***Make Bucket A Static Website***
 
   ```aws s3 website s3://website-bucket-name/ --index-document index.html --error-document error.html```
 
-  ***Sync client-side files to Static Website Bucket***
+ - ***Sync client-side files to Static Website Bucket***
 
   ```aws s3 sync projectfolder s3://website-bucket-name --acl public-read```
 
-  ***List all s3 Buckets***
+ - ***List all s3 Buckets***
 
   ```aws s3api list-buckets```
 
