@@ -40,7 +40,8 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 const params = { Bucket: 'photo-bucket-tmp-prjct'};
 ```
-2. Configure .yml file with cors:
+ - Use s3.listObjects in your lambda function [s3.listObjects](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#listObjects-property)
+2. Configure .yml for your function with ```region:us-west-2``` & add the code below to allow CORS:
 ```events:
       - http:
          path: photos
@@ -56,7 +57,7 @@ const params = { Bucket: 'photo-bucket-tmp-prjct'};
             - X-Amz-User-Agent
           allowCredentials: false
  ```
- 3. Test your AWS Lambda function locally(You should get a response back from the public API bucket). 
+ 3. Test your AWS Lambda function locally(You should get a response back from the public API bucket like the code below). 
  ```
 {
     "statusCode": 200,
@@ -66,10 +67,19 @@ const params = { Bucket: 'photo-bucket-tmp-prjct'};
     },
     "body": "{\"message\":{\"IsTruncated\":false,\"Marker\":\"\",\"Contents\":[{\"Key\":\"random-pictures-1.jpg\",\"LastModified\":\"2017-10-21T23:44:10.000Z\",\"ETag\":\"\\\"2e428e8ae830e4015f0df533b8f006e1\\\"\",\"Size\":71296,\"StorageClass\":\"STANDARD\",\"Owner\":{\"DisplayName\":\"junior+whsdevops\",\"ID\":\"123c07480908fa9b8fc35f1e8bd4325f14e1f29488e2c605c433966d4c4be52b\"}},
  ```
- 4. Deploy Serverless
- 5. Build client side GET request to your specific Lambda URL
- 6. Create a button. When user clicks the button, an ajax request is made to your specific Lambda URL, then dynamically display all the images from the public S3 bucket. 
+ 4. Deploy your function(Take note of the endpoint that is generated).
+ 5. Build a client-side GET request to your specific Lambda URL.
+ 6. Create a button. When user clicks the button, it should initiate an ajax request to your specific Lambda URL, then dynamically display all the images from the public S3 bucket. 
 
 ### Testing
-  - Use live-server to test client side scripts
+  - Use live-server to test client-side scripts.
+
+### Resources
+
+- [s3.listObjects](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#listObjects-property)
+
+- [Serverless](https://serverless.com/framework/docs/providers/aws/)
+
+- [AWS CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/)
+
 
