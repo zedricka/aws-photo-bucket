@@ -35,9 +35,11 @@ You will be creating a Lambda function that makes a request to a public S3 bucke
 ## Steps
 1. Build AWS Lambda function that makes a request to the public API bucket `photo-bucket-tmp-prjct`.
 Add in the following to your Lambda function:
- - ```const AWS = require('aws-sdk');
+```
+const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
-const params = { Bucket: 'photo-bucket-tmp-prjct' };```
+const params = { Bucket: 'photo-bucket-tmp-prjct'};
+```
 2. Configure .yml file with cors:
 ```events:
       - http:
