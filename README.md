@@ -76,27 +76,25 @@ const params = { Bucket: 'photo-bucket-tmp-prjct'};
   - Use live-server to test client-side scripts.
 
 ### Useful Commands
-```
-*** Test function locally ***
+***Test function locally***
 
-sls invoke local -f "function name"
+```sls invoke local -f "function name"```
 
-*** Deploy function only ***
+***Deploy function only***
 
-sls deploy -f "function name
+```sls deploy -f "function name```
 
-*** Deploy everything ***
+***Deploy everything***
 
-sls deploy
+```sls deploy```
 
-*** Function logs ***
+***Function logs***
 
-sls logs -f "function name"
+```sls logs -f "function name"```
 
-*** Serverless CLI help ***
+***Serverless CLI help***
 
-sls help
-```
+```sls help```
 
 ### Resources
 
