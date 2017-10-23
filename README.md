@@ -68,11 +68,35 @@ const params = { Bucket: 'photo-bucket-tmp-prjct'};
     "body": "{\"message\":{\"IsTruncated\":false,\"Marker\":\"\",\"Contents\":[{\"Key\":\"random-pictures-1.jpg\",\"LastModified\":\"2017-10-21T23:44:10.000Z\",\"ETag\":\"\\\"2e428e8ae830e4015f0df533b8f006e1\\\"\",\"Size\":71296,\"StorageClass\":\"STANDARD\",\"Owner\":{\"DisplayName\":\"junior+whsdevops\",\"ID\":\"123c07480908fa9b8fc35f1e8bd4325f14e1f29488e2c605c433966d4c4be52b\"}},
  ```
  4. Deploy your function(Take note of the endpoint that is generated).
+  - Note: If you make a change to your function or .yml file you will need to re-deploy
  5. Build a client-side GET request to your specific Lambda URL.
  6. Create a button. When user clicks the button, it should initiate an ajax request to your specific Lambda URL, then dynamically display all the images from the public S3 bucket. 
 
 ### Testing
   - Use live-server to test client-side scripts.
+
+### Useful Commands
+```
+Test function locally
+
+sls invoke local -f "function name"
+
+Deploy function only
+
+sls deploy -f "function name
+
+Deploy everything
+
+sls deploy
+
+Function logs
+
+sls logs -f "function name"
+
+Serverless CLI help
+
+sls help
+```
 
 ### Resources
 
