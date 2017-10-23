@@ -45,8 +45,6 @@ You will be creating a Lambda function that makes a request to a public S3 bucke
           allowCredentials: false
  ```
  3. Test your AWS Lambda function locally(You should get a response back from the public API bucket). 
- <br>
- Result:
  ```
 {
     "statusCode": 200,
