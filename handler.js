@@ -11,12 +11,16 @@ s3.listObjects(params, function(err, data) {
 module.exports.hello = (event, context, callback) => {
 console.log("Are you alive");
   const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Testing testing 1 2 3',
-      input: event,
-    }),
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': "*",
+        'Access-Control-Allow-Credentials': true
+      },
+      body: JSON.stringify({
+        message: 'Testing testing 1 2 3',
+        input: event,
+      }),
   };
 
   callback(null, response);
-};
+}; 
